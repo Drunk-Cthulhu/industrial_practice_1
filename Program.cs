@@ -205,7 +205,7 @@ ninth(10, arr);
 
 void tenth(string A, int D)
     {
-    List<string> lines = A.Split('\n').ToList(); // convert A into a list of lines
+    List<string> lines = A.Split('\n').ToList(); 
     List<string> extractedLines = new List<string>();
 
     for (int i = 0; i < D; i++)
@@ -217,9 +217,9 @@ void tenth(string A, int D)
         }
     }
 
-    extractedLines.Reverse(); // reverse the order of the extracted lines
+    extractedLines.Reverse(); 
 
-    string result = string.Join(", ", extractedLines); // convert the reversed lines into a string
+    string result = string.Join(", ", extractedLines);
     Console.WriteLine("10) "+result);
 }
 tenth("abc\nCaB\nAB\nBcd\naca\nAbaba", 4);
@@ -295,8 +295,12 @@ void fourteenth(string A)
 
         if (!string.IsNullOrEmpty(str))
         {
-            string modifiedStr = str + (i + 1);
-            modifiedSequence.Add(modifiedStr);
+            if (str != " ")
+            {
+                string modifiedStr = str + (i + 1);
+
+                modifiedSequence.Add(modifiedStr);
+            }
         }
     }
 
@@ -305,7 +309,8 @@ void fourteenth(string A)
 
     foreach (string str in modifiedSequence)
     {
-        Console.Write(str+", ");
+        
+            Console.Write(str+", ");
     }
     Console.Write("\n");
 
